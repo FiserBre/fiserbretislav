@@ -11,11 +11,10 @@ const About: React.FC = () => {
   const xLeft = useTransform(scrollYProgress, [0, 1], [-100, 100]);
   const xRight = useTransform(scrollYProgress, [0, 1], [100, -100]);
   
-  // Vertical parallax for background text
   const yText = useTransform(scrollYProgress, [0, 1], [-50, 50]);
 
   const skills = [
-    "React", "TypeScript", "Tailwind", "Three.js", "Node.js", "Framer Motion", "Next.js", "GraphQL"
+    "React", "TypeScript", "Tailwind", "PHP", "Node.js", "Framer Motion", "WordPress", "MySQL"
   ];
 
   return (
