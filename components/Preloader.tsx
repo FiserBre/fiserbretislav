@@ -5,7 +5,7 @@ const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const duration = 2000; // 2 seconds loading time
+    const duration = 2000;
     const steps = 100;
     const intervalTime = duration / steps;
 
@@ -19,7 +19,6 @@ const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
       });
     }, intervalTime);
 
-    // Trigger completion slightly after counter hits 100
     const completeTimer = setTimeout(() => {
       onComplete();
     }, duration + 500);
@@ -69,7 +68,7 @@ const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
             transition={{ delay: 0.2 }}
             className="mt-4 flex justify-between text-xs text-gray-500 font-mono uppercase"
         >
-            <span>Inicializace systému</span>
+            <span>Inicializace projektu</span>
             <span>Praha, CZ</span>
         </motion.div>
       </div>

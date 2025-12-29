@@ -24,8 +24,7 @@ const Navbar: React.FC = () => {
   const menuItems = [
     { name: 'O mně', href: '#about' },
     { name: 'Projekty', href: '#projects' },
-    { name: 'Zkušenosti', href: '#experience' }, // Note: Section doesn't exist in example, but keeping link
-    { name: 'Digitální Já', href: '#contact' },
+    { name: 'AI chat', href: '#contact' },
   ];
 
   return (

@@ -41,7 +41,6 @@ const App: React.FC = () => {
     restDelta: 0.001
   });
 
-  // 1. Force manual scroll restoration immediately on mount
   useLayoutEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
@@ -49,25 +48,20 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // 2. Aggressive Scroll Handling
   useEffect(() => {
-    // Reset scroll when page unloads to ensure next load starts at top
     const handleBeforeUnload = () => {
       window.scrollTo(0, 0);
     };
     window.addEventListener('beforeunload', handleBeforeUnload);
 
     if (isLoading) {
-      // Disable smooth scrolling temporarily to allow instant jump
       document.documentElement.classList.remove('scroll-smooth');
       document.body.style.overflow = 'hidden';
       window.scrollTo(0, 0);
     } else {
-      // Force top position one last time before unlocking
       window.scrollTo(0, 0);
       document.body.style.overflow = 'unset';
       
-      // Re-enable smooth scrolling after a delay (wait for browser to settle)
       const timeout = setTimeout(() => {
         document.documentElement.classList.add('scroll-smooth');
       }, 100);

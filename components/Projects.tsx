@@ -6,25 +6,25 @@ import { Project } from '../types';
 const projects: Project[] = [
   {
     id: 1,
-    title: "Neon Nexus",
+    title: "CanoeApp",
     description: "Kyberpunkem inspirovaná e-commerce platforma postavená na Next.js 14 s WebGL náhledy produktů.",
-    tags: ["Next.js", "WebGL", "Stripe"],
+    tags: ["PHP", "MySQL", "CSS"],
     image: "https://picsum.photos/600/400?random=1",
     link: "#"
   },
   {
     id: 2,
-    title: "Aura Finance",
-    description: "Krypto dashboard v reálném čase vizualizující blockchainové transakce pomocí D3.js a WebSockets.",
-    tags: ["React", "D3.js", "WebSockets"],
+    title: "denikcheat",
+    description: "aplikace pro cheat sportovního deníku",
+    tags: ["React", "TypeScript", "Tailwind"],
     image: "https://picsum.photos/600/400?random=2",
-    link: "#"
+    link: "https://denikcheat.vercel.app/"
   },
   {
     id: 3,
-    title: "Zenith AI",
+    title: "Toto portfolio",
     description: "Rozhraní generativní AI pro tvorbu syntetických mediálních aktiv.",
-    tags: ["TypeScript", "GenAI SDK", "Tailwind"],
+    tags: ["TypeScript", "React", "Tailwind"],
     image: "https://picsum.photos/600/400?random=3",
     link: "#"
   }

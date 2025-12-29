@@ -8,7 +8,7 @@ const DigitalTwin: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: 'model',
-      text: "Ahoj! Jsem Břetislavovo digitální dvojče (poháněné Gemini). Zeptej se mě na cokoliv ohledně jeho dovedností, zkušeností nebo na čem zrovna pracuje!",
+      text: "Ahoj! Jsem Tomik. Zeptej se mě na cokoliv ohledně projektů, ceny nebo Břetislavova života!",
       timestamp: new Date()
     }
   ]);
@@ -47,14 +47,13 @@ const DigitalTwin: React.FC = () => {
             <Bot size={20} className="text-white" />
           </div>
           <div>
-            <h3 className="font-bold text-white">Digitální Břetislav</h3>
+            <h3 className="font-bold text-white">Tomik</h3>
             <div className="flex items-center text-xs text-green-400">
               <span className="w-2 h-2 bg-green-400 rounded-full mr-1 animate-pulse"></span>
-              Online • Gemini 2.5 Flash
+              Online
             </div>
           </div>
         </div>
-        <Sparkles className="text-accent/50" size={20} />
       </div>
 
       {/* Chat Area */}
@@ -104,7 +103,7 @@ const DigitalTwin: React.FC = () => {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Zeptej se na mé sazby, technologie nebo oblíbené sci-fi..."
+            placeholder="Zeptej se na přibližnou cenu, technologie nebo na cokoli co tě napadne..."
             className="w-full bg-black/20 border border-white/10 rounded-xl py-4 pl-4 pr-12 text-white placeholder-gray-500 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-all"
           />
           <button
