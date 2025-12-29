@@ -48,9 +48,9 @@ export const sendMessageToGemini = async (message: string): Promise<string> => {
   try {
     const chat = getGeminiChat();
     const response = await chat.sendMessage({ message });
-    return response.text || "Mám problém se spojením. Zkus to prosím později.";
+    return response.text || "Mám problém se spojením. Zkus to prosím později. Případně se vrať později.";
   } catch (error) {
     console.error("Error:", error);
-    return "Něco se pokazilo, zkus to prosím později.";
+    return "Něco se pokazilo, zkus to prosím později. Případně se vrať později.";
   }
 };
