@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
             <div className="flex space-x-6 pt-4 border-t border-white/10">
               <a href="https://github.com/FiserBre" className="text-gray-400"><Github size={24} /></a>
               <a href="#" className="text-gray-400"><Linkedin size={24} /></a>
-              <a href="fiserbretislav@email.cz" className="text-gray-400"><Mail size={24} /></a>
+              <a href="mailto:fiserbretislav@email.cz" className="text-gray-400"><Mail size={24} /></a>
             </div>
           </div>
         </motion.div>
