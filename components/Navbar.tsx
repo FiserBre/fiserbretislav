@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
               </a>
             ))}
             <div className="flex space-x-6 pt-4 border-t border-white/10">
-              <a href="#" className="text-gray-400"><Github size={24} /></a>
+              <a href="https://github.com/FiserBre" className="text-gray-400"><Github size={24} /></a>
               <a href="#" className="text-gray-400"><Linkedin size={24} /></a>
               <a href="#" className="text-gray-400"><Mail size={24} /></a>
             </div>
