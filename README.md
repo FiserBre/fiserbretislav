@@ -14,26 +14,18 @@ View your app in AI Studio: https://ai.studio/apps/drive/1F2hZAp9YCuqLM9jrYl8Lkw
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. For local development set the `GEMINI_API_KEY` in `.env.local` (do NOT commit this file).
+   For Vercel deployment, add the environment variable `API_KEY` in the Vercel Project Settings (Environment Variables).
+3. Run the app locally:
    `npm run dev`
 
-## Deploy to InfinityFree
+## Deploy to Vercel
 
-1. Build the site (this will create an `htdocs` folder ready for upload):
-   `npm run build` or `npm run build:infinityfree`
+1. Create a new Vercel project and connect this repository.
+2. Set the Environment Variable `API_KEY` (key name: `API_KEY`) in the Vercel Project Settings.
+3. Vercel Build Settings (automatic with `vercel.json`):
+   - **Build command:** `npm run build`
+   - **Output directory:** `dist`
+4. Deploy — Vercel will run the build and publish the `dist` folder. SPA routing is configured in `vercel.json`.
 
-2. Create a ZIP of the `htdocs` contents (PowerShell example):
-
-```powershell
-Compress-Archive -Path .\htdocs\* -DestinationPath .\deploy.zip
-```
-
-3. In InfinityFree control panel, upload the ZIP to the account's `htdocs` (or use FTP) and extract, or upload files directly so that `index.html` is in the site root.
-
-4. Ensure `.htaccess` is present in the site root (it is included in the build here) so client-side routing falls back to `index.html`.
-
-Notes:
-
-- The Vite config uses `base: './'` to keep asset paths relative so the site works from the hosting root.
-- If your InfinityFree account uses a different document root (like `public_html`), upload the built files there instead.
+If you still need the legacy InfinityFree workflow, keep the `build:infinityfree` script; otherwise you can remove the `htdocs` folder and related artifacts.
