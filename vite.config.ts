@@ -8,10 +8,10 @@ export default defineConfig(({ mode }) => {
       // Use relative paths so the built site works when uploaded to
       // static hosts that serve the site from arbitrary folders.
       base: './',
-      // Output build into `htdocs` so it's ready to upload to InfinityFree
-      // (their hosting root). `emptyOutDir` ensures previous files are removed.
+      // Output build into `dist` for standard static hosts (Vercel).
+      // `emptyOutDir` ensures previous files are removed.
       build: {
-        outDir: 'htdocs',
+        outDir: 'dist',
         emptyOutDir: true,
         // Split vendor and framework code to improve caching and load on low-end devices
         rollupOptions: {
