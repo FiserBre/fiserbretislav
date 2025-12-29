@@ -7,16 +7,13 @@ const Navbar: React.FC = () => {
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
 
-  // Throttle scroll updates to avoid frequent state changes on fast scrolls
-  const ticking = React.useRef(false);
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (ticking.current) return;
-    ticking.current = true;
-    requestAnimationFrame(() => {
-      const previous = scrollY.getPrevious() ?? 0;
-      setHidden(latest > previous && latest > 150);
-      ticking.current = false;
-    });
+    const previous = scrollY.getPrevious() ?? 0;
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
   });
 
   const variants = {
@@ -27,7 +24,8 @@ const Navbar: React.FC = () => {
   const menuItems = [
     { name: 'O mně', href: '#about' },
     { name: 'Projekty', href: '#projects' },
-    { name: 'AI chat', href: '#contact' },
+    { name: 'Zkušenosti', href: '#experience' }, // Note: Section doesn't exist in example, but keeping link
+    { name: 'Digitální Já', href: '#contact' },
   ];
 
   return (
@@ -58,7 +56,7 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <a href="https://github.com/FiserBre" className="text-gray-400 hover:text-white transition-colors"><Github size={20} /></a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors"><Github size={20} /></a>
             <a href="#" className="text-gray-400 hover:text-white transition-colors"><Linkedin size={20} /></a>
           </div>
 
@@ -104,5 +102,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-// Memoize navbar to avoid re-renders from parent updates
-export const MemoizedNavbar = React.memo(Navbar);

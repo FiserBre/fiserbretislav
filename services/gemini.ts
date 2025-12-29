@@ -21,8 +21,7 @@ let chatSession: Chat | null = null;
 export const getGeminiChat = (): Chat => {
   if (chatSession) return chatSession;
 
-  const API_KEY = process.env.API_KEY || process.env.GEMINI_API_KEY;
-  const ai = new GoogleGenAI({ apiKey: API_KEY });
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   chatSession = ai.chats.create({
     model: 'gemini-2.5-flash',
     config: {

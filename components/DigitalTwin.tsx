@@ -8,7 +8,7 @@ const DigitalTwin: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: 'model',
-      text: "Ahoj! Jsem tomik. Zeptej se mě na cokoliv ohledně dovedností, zkušeností atd.!",
+      text: "Ahoj! Jsem Břetislavovo digitální dvojče (poháněné Gemini). Zeptej se mě na cokoliv ohledně jeho dovedností, zkušeností nebo na čem zrovna pracuje!",
       timestamp: new Date()
     }
   ]);
@@ -16,15 +16,8 @@ const DigitalTwin: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
 
-  // Avoid scrolling the whole page on initial mount. Only scroll the chat when
-  // messages change after the initial render (e.g., user or model replies).
-  const mountedRef = useRef(false);
   useEffect(() => {
-    if (!mountedRef.current) {
-      mountedRef.current = true;
-      return;
-    }
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
   const handleSend = async (e: React.FormEvent) => {
@@ -54,7 +47,7 @@ const DigitalTwin: React.FC = () => {
             <Bot size={20} className="text-white" />
           </div>
           <div>
-            <h3 className="font-bold text-white">tomik</h3>
+            <h3 className="font-bold text-white">Digitální Břetislav</h3>
             <div className="flex items-center text-xs text-green-400">
               <span className="w-2 h-2 bg-green-400 rounded-full mr-1 animate-pulse"></span>
               Online • Gemini 2.5 Flash

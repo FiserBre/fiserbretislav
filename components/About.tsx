@@ -15,7 +15,7 @@ const About: React.FC = () => {
   const yText = useTransform(scrollYProgress, [0, 1], [-50, 50]);
 
   const skills = [
-    "React", "TypeScript", "Tailwind", "Three.js", "Node.js", "Framer Motion", "Next.js", "MySQL"
+    "React", "TypeScript", "Tailwind", "Three.js", "Node.js", "Framer Motion", "Next.js", "GraphQL"
   ];
 
   return (
@@ -37,14 +37,15 @@ const About: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-6xl font-display font-bold mb-8">
-              Weby jsou můj <span className="text-secondary">Koníček</span>.
+              Kód je mé <span className="text-secondary">Plátno</span>.
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              Jsem vývojář se sídlem v Praze.
+              Jsem multidisciplinární vývojář se sídlem v Praze. Nestavím jen webové stránky; tvořím interaktivní cesty.
+              Moje filozofie je jednoduchá: výkon by nikdy neměl jít na úkor estetiky.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
-              Pomáhám značkám a jednotlivcům vyniknout 
-              oproti konkurenci.
+              S více než 5 lety zkušeností v moderním ekosystému JavaScriptu pomáhám značkám a jednotlivcům vyniknout 
+              v digitálním šumu.
             </p>
           </motion.div>
 

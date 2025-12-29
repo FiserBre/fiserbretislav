@@ -1,9 +1,0 @@
-# Ignore legacy/extra build artifacts and local env files
-htdocs/
-htdocs/**
-assets/**
-vendor_*
-.env.local
-.env.*
-node_modules/
-dist/

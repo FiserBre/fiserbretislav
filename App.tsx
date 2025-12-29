@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useLayoutEffect, Suspense, lazy } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 import About from './components/About';
+import Projects from './components/Projects';
+import DigitalTwin from './components/DigitalTwin';
 import Footer from './components/Footer';
-// Lazy-load heavier parts to reduce initial bundle and improve TTI on low-end devices
-const Preloader = lazy(() => import('./components/Preloader'));
-const Hero = lazy(() => import('./components/Hero'));
-const Projects = lazy(() => import('./components/Projects'));
-const DigitalTwin = lazy(() => import('./components/DigitalTwin'));
+import Preloader from './components/Preloader';
 import { motion, useScroll, useSpring, useTransform, AnimatePresence } from 'framer-motion';
 
 const ParallaxBackground = () => {
@@ -66,42 +65,6 @@ const App: React.FC = () => {
     } else {
       // Force top position one last time before unlocking
       window.scrollTo(0, 0);
-      // Remove any hash to avoid browser auto-scrolling to anchors
-      try {
-        if (location.hash) {
-          history.replaceState(null, '', location.pathname + location.search);
-        }
-      } catch (e) {
-        // ignore
-      }
-      // Ensure hero is visible after initial render (small timeout to allow layout)
-      setTimeout(() => {
-        const hero = document.getElementById('hero');
-        if (hero) {
-          hero.scrollIntoView({ behavior: 'auto', block: 'start' });
-        } else {
-          window.scrollTo(0, 0);
-        }
-      }, 50);
-
-      // Temporary guard: prevent unexpected automatic jumps immediately after load.
-      // For a short window (500ms) after unlocking scroll, if any automatic script
-      // scrolls the page, bring it back to the hero. This avoids race conditions
-      // where other scripts (animations/layout measurement) trigger a scroll.
-      const guardUntil = Date.now() + 500;
-      const onScrollGuard = () => {
-        if (Date.now() < guardUntil) {
-          const y = window.scrollY || window.pageYOffset || 0;
-          if (y > 20) {
-            const hero = document.getElementById('hero');
-            if (hero) hero.scrollIntoView({ behavior: 'auto', block: 'start' });
-            else window.scrollTo(0, 0);
-          }
-        } else {
-          window.removeEventListener('scroll', onScrollGuard);
-        }
-      };
-      window.addEventListener('scroll', onScrollGuard, { passive: true });
       document.body.style.overflow = 'unset';
       
       // Re-enable smooth scrolling after a delay (wait for browser to settle)
@@ -109,10 +72,10 @@ const App: React.FC = () => {
         document.documentElement.classList.add('scroll-smooth');
       }, 100);
 
-        return () => {
+      return () => {
           clearTimeout(timeout);
           window.removeEventListener('beforeunload', handleBeforeUnload);
-        };
+      };
     }
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, [isLoading]);
@@ -121,9 +84,7 @@ const App: React.FC = () => {
     <div className="bg-transparent min-h-screen text-white selection:bg-accent selection:text-black relative">
       <AnimatePresence mode="wait">
         {isLoading && (
-          <Suspense fallback={<div className="w-screen h-screen bg-black" />}>
-            <Preloader key="preloader" onComplete={() => setIsLoading(false)} />
-          </Suspense>
+          <Preloader key="preloader" onComplete={() => setIsLoading(false)} />
         )}
       </AnimatePresence>
 
@@ -145,13 +106,9 @@ const App: React.FC = () => {
           <Navbar />
           
           <main className="relative z-10">
-            <Suspense fallback={<div className="h-[80vh] bg-gradient-to-b from-black to-transparent" />}>
-              <Hero />
-            </Suspense>
+            <Hero />
             <About />
-            <Suspense fallback={<div className="py-24">Načítání projektů…</div>}>
-              <Projects />
-            </Suspense>
+            <Projects />
             
             {/* Contact / AI Section */}
             <section id="contact" className="py-24 px-6 relative">
@@ -159,15 +116,13 @@ const App: React.FC = () => {
               <div className="container mx-auto">
                  <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-                        Využij <span className="text-accent">asistenta</span>
+                        Pojďme <span className="text-accent">Mluvit</span>
                     </h2>
                     <p className="text-gray-400">
                         Popovídejte si s mým AI agentem níže a získejte okamžité odpovědi.
                     </p>
                  </div>
-                 <Suspense fallback={<div className="h-[600px] flex items-center justify-center">Načítání…</div>}>
-                   <DigitalTwin />
-                 </Suspense>
+                 <DigitalTwin />
               </div>
             </section>
           </main>

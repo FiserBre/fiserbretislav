@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section id="hero" ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Dynamic Background */}
       <motion.div 
         style={{ y: backgroundY }}
@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
             animate={{ y: "0%", opacity: 1 }}
             transition={{ delay: 1.0, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            Břetislav
+            Kreativní
           </motion.div>
           <motion.div
             initial={{ y: "150%", opacity: 0 }}
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
             transition={{ delay: 1.2, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="bg-clip-text text-transparent bg-gradient-to-r from-accent via-white to-secondary"
           >
-            Fišer
+            Vývojář
           </motion.div>
         </h1>
 
@@ -69,7 +69,8 @@ const Hero: React.FC = () => {
           transition={{ delay: 1.6, duration: 0.8 }}
           className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
         >
-          Tvořím pohlcující weby pomocí react type.js, js a dalsich frameworků
+          Tvořím pohlcující digitální zážitky pomocí kódu, pohybu a designu.
+          Specializace na React a WebGL.
         </motion.p>
       </motion.div>
 

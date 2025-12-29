@@ -10,22 +10,11 @@ View your app in AI Studio: https://ai.studio/apps/drive/1F2hZAp9YCuqLM9jrYl8Lkw
 
 ## Run Locally
 
-**Prerequisites:** Node.js
+**Prerequisites:**  Node.js
+
 
 1. Install dependencies:
    `npm install`
-2. For local development set the `GEMINI_API_KEY` in `.env.local` (do NOT commit this file).
-   For Vercel deployment, add the environment variable `API_KEY` in the Vercel Project Settings (Environment Variables).
-3. Run the app locally:
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
    `npm run dev`
-
-## Deploy to Vercel
-
-1. Create a new Vercel project and connect this repository.
-2. Set the Environment Variable `API_KEY` (key name: `API_KEY`) in the Vercel Project Settings.
-3. Vercel Build Settings (automatic with `vercel.json`):
-   - **Build command:** `npm run build`
-   - **Output directory:** `dist`
-4. Deploy — Vercel will run the build and publish the `dist` folder. SPA routing is configured in `vercel.json`.
-
-If you still need the legacy InfinityFree workflow, keep the `build:infinityfree` script; otherwise you can remove the `htdocs` folder and related artifacts.
