@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { Menu, X, Github, Instagram, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
             ))}
             <div className="flex space-x-6 pt-4 border-t border-white/10">
               <a href="https://github.com/FiserBre" className="text-gray-400"><Github size={24} /></a>
-              <a href="#" className="text-gray-400"><Instagram size={24} /></a>
+              <a href="#" className="text-gray-400"><Linkedin size={24} /></a>
               <a href="mailto:fiserbretislav@email.cz" className="text-gray-400"><Mail size={24} /></a>
             </div>
           </div>
