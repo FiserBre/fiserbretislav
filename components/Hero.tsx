@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
             animate={{ y: "0%", opacity: 1 }}
             transition={{ delay: 1.0, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            Jakub
+            Břetislav
           </motion.div>
           <motion.div
             initial={{ y: "150%", opacity: 0 }}
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
             transition={{ delay: 1.2, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="bg-clip-text text-transparent bg-gradient-to-r from-accent via-white to-secondary"
           >
-            Šimončič
+            Fišer
           </motion.div>
         </h1>
 
