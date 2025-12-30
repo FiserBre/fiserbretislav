@@ -39,12 +39,11 @@ const About: React.FC = () => {
               Weby jsou můj <span className="text-secondary">koníček</span>.
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              Jsem vývojář se sídlem v Praze. Stavím webové stránky, upravuji projekty a tvořím interaktivní cesty.
-              Moje filozofie je jednoduchá: výkon by nikdy neměl jít na úkor estetiky.
+              Jsem studentem Smíchovské střední průmyslové školy. 
+              Webový vývoj pro mě není jen studijní obor, ale především zábava – baví mě proces, kdy po psaní kódu vidím výsledek témeř okamžitě.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
-              S více než 5 lety zkušeností v moderním ekosystému JavaScriptu pomáhám značkám a jednotlivcům vyniknout 
-              v digitálním šumu.
+              Nepohybuji se také jen za obrazovku počítače. Ve volném čase se věnuji rychlostní kanoistice nebo třeba sportovní fotografii.
             </p>
           </motion.div>
 
