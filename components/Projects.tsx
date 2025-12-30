@@ -9,7 +9,7 @@ const projects: Project[] = [
     title: "CanoeApp",
     description: "Kyberpunkem inspirovaná e-commerce platforma postavená na Next.js 14 s WebGL náhledy produktů.",
     tags: ["PHP", "MySQL", "CSS"],
-    image: "https://picsum.photos/600/400?random=1",
+    image: "",
     link: "#"
   },
   {
@@ -17,7 +17,7 @@ const projects: Project[] = [
     title: "denikcheat",
     description: "aplikace pro cheat sportovního deníku",
     tags: ["React", "TypeScript", "Tailwind"],
-    image: "https://picsum.photos/600/400?random=2",
+    image: "",
     link: "https://denikcheat.vercel.app/"
   },
   {
@@ -25,7 +25,7 @@ const projects: Project[] = [
     title: "Toto portfolio",
     description: "Rozhraní generativní AI pro tvorbu syntetických mediálních aktiv.",
     tags: ["TypeScript", "React", "Tailwind"],
-    image: "https://picsum.photos/600/400?random=3",
+    image: "",
     link: "#"
   }
 ];
