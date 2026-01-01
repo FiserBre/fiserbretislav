@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
           transition={{ delay: 1.6, duration: 0.8 }}
           className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
         >
-          Tvořím pohlcující weby pomocí react type.js, js a dalsich frameworků
+          Každý úspěch začíná moderním webem...
         </motion.p>
       </motion.div>
 
