@@ -28,12 +28,6 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <motion.nav
-      variants={variants}
-      animate={hidden ? "hidden" : "visible"}
-      transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="fixed top-0 w-full z-50 px-6 py-4"
-    >
       <div className="max-w-7xl mx-auto">
         <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl px-6 py-3 flex justify-between items-center shadow-lg shadow-black/20">
           <a href="#" className="text-2xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary tracking-tighter">
