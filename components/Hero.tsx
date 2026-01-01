@@ -39,9 +39,6 @@ const Hero: React.FC = () => {
           transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
           className="mb-6 inline-block"
         >
-          <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs tracking-widest uppercase text-accent">
-            Dostupný pro spolupráci
-          </span>
         </motion.div>
 
         <h1 className="text-5xl md:text-8xl font-display font-bold leading-tight mb-6 tracking-tight overflow-hidden pb-2">
