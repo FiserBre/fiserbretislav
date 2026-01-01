@@ -1,9 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
 
 const Hero: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -15,15 +12,6 @@ const Hero: React.FC = () => {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const words = ["škálují", "prodávají", "vynikají"];
-
-  export default function HeroSection() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => setIndex((i) => (i + 1) % words.length), 3000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -78,23 +66,7 @@ const Hero: React.FC = () => {
           transition={{ delay: 1.6, duration: 0.8 }}
           className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
         >
-          <h1 className="text-4xl font-bold">
-      Stavím weby, které{" "}
-      <div className="inline-block relative h-[1.2em] overflow-hidden align-bottom">
-        <AnimatePresence mode="wait">
-          <motion.span
-            key={words[index]}
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-blue-600 absolute left-0"
-          >
-            {words[index]}
-          </motion.span>
-        </AnimatePresence>
-      </div>
-    </h1>
+          Od nápadu po funkční web
         </motion.p>
       </motion.div>
 
