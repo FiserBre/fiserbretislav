@@ -10,7 +10,7 @@ import { motion, useScroll, useSpring, useTransform, AnimatePresence } from 'fra
 
 const ParallaxBackground = () => {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "0%"]);
+  const y = useTransform(scrollYProgress, [0, 0], ["0%", "0%"]);
   
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
