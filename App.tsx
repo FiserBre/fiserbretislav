@@ -37,7 +37,7 @@ const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
-    damping: 30,
+    damping: 0,
     restDelta: 0.001
   });
 
