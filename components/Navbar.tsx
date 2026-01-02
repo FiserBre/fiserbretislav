@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
   const menuItems = [
     { name: 'O mně', href: '#about' },
     { name: 'Projekty', href: '#projects' },
-    { name: 'AI chat', href: '#contact' },
+    { name: 'AI chat (demo)', href: '#contact' },
   ];
 
   return (
