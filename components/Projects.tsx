@@ -7,7 +7,7 @@ const projects: Project[] = [
   {
     id: 1,
     title: "CanoeApp",
-    description: "Kyberpunkem inspirovaná e-commerce platforma postavená na Next.js 14 s WebGL náhledy produktů.",
+    description: "Aplikace (v rámci ročníkové práce) věnovaná rychlostní kanoistice, sportu který dělám. do budoucna bude obsahovat mnoho funkcí, těším se na výsledek",
     tags: ["PHP", "MySQL", "CSS"],
     image: "",
     link: "#"
@@ -23,7 +23,7 @@ const projects: Project[] = [
   {
     id: 3,
     title: "Toto portfolio",
-    description: "Rozhraní generativní AI pro tvorbu syntetických mediálních aktiv.",
+    description: "Portfolio prezentující mě a mé projekty",
     tags: ["TypeScript", "React", "Tailwind"],
     image: "",
     link: "#"
