@@ -113,7 +113,7 @@ const App: React.FC = () => {
                         zkuste si <span className="text-accent">AI</span>
                     </h2>
                     <p className="text-gray-400">
-                        Zkuste si propojení ai s webem
+                        Zkuste si propojení ai s webem <br/>
                         (demo - není 100% spolehlivé).
                     </p>
                  </div>
