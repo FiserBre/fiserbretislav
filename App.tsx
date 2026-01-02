@@ -110,10 +110,10 @@ const App: React.FC = () => {
               <div className="container mx-auto">
                  <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-                        Pojďme <span className="text-accent">Mluvit</span>
+                        zkuste si <span className="text-accent">AI</span>
                     </h2>
                     <p className="text-gray-400">
-                        Popovídejte si s mým AI agentem níže a získejte okamžité odpovědi.
+                        Zkuste si propojení ai s webem(demo - není 100% spolehlivé).
                     </p>
                  </div>
                  <DigitalTwin />
